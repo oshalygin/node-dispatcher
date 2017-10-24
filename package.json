@@ -32,6 +32,8 @@
     "eslint-plugin-jest": "^21.2.0",
     "eslint-plugin-prettier": "2.1.2",
     "jest": "21.2.1",
-    "prettier": "1.7.4"
-  }
+    "prettier": "1.7.4",
+    "sinon": "^4.0.1"
+  },
+  "dependencies": {}
 }
