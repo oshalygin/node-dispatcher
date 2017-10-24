@@ -1,0 +1,16 @@
+{
+  "name": "event-dispatcher-test",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "test": "npm run lint && npm run jasmine",
+    "lint": "eslint events*.js",
+    "jasmine": "jasmine-node --test-dir . --color",
+    "watch": "jasmine-node --test-dir . --color --autotest"
+  },
+  "devDependencies": {
+    "eslint": "4.0.0",
+    "jasmine-core": "2.6.4",
+    "jasmine-node": "1.14.5"
+  }
+}
