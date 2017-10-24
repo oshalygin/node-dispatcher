@@ -1,12 +1,28 @@
-module.exports = function() {
+module.exports = function(wallaby) {
+  'use strict';
   return {
-    files: ['./*.js', { pattern: '*.spec.js', ignore: true }],
-    tests: ['./*.spec.js'],
-
+    files: ['*.js*', '!*.json', '!*.spec.js*'],
+    tests: ['*.spec.js'],
     env: {
       type: 'node',
+      params: {
+        env: 'NODE_ENV=test',
+      },
     },
-
-    testFramework: 'jasmine',
+    testFramework: 'jest',
+    compilers: {
+      '**/*.js*': wallaby.compilers.babel({
+        presets: ['latest', 'stage-1'],
+        plugins: [
+          'transform-object-rest-spread',
+          [
+            'transform-runtime',
+            {
+              polyfill: false,
+            },
+          ],
+        ],
+      }),
+    },
   };
 };
